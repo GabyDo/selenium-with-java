@@ -182,6 +182,46 @@ The third major ability for XPath is finding elements relative to other elements
 //a[.//img]
 
 
+----------------------------------------major OOP principles----------------------------------------
+Pillars of OOP: encapsulation, inheritance, polymorphism, and abstraction
+
+encapsulation: make the field private, protected.
+inheritance; one class share data and behaviors with others
+polymorphism: ability to take multiple forms
+Animal: makeSound
+Dog extends Animal: makeSound("woof"), fetch();
+Cat extends Animal:makeSound("mwow"), eat();
+animal
+animal instance of Dog
+animal instance of Cat
+
+
+Abtraction: provide templates to be implemented.
+
+
+		public interface Product {
+
+		double getPrice();
+		void setPrice(double price);
+
+
+		String getName();
+		void setNAme(String name)
+
+		String getColor();
+		void setColor(String color);
+
+
+		}
+
+
+
+public class Book implements Proudct {
+
+		}
+
+
+
 
 
 
