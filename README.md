@@ -1,6 +1,9 @@
 # selenium-with-java
 Selenium WebDriver is not a verification tool. It is only used to automate the actions on the browser
 Page Object Model design pattern: create a class in your framework section of the project that represents a page in your application — and for every page in your application you'd create a new class in the framework section of your project.
+var: store a return in a variable, use the var so we don't have to type out the long class name.
+
+
 
 
 UI Functional Tests:
@@ -78,5 +81,111 @@ First Principles in Testing
 Micro- and Macro-Level Testing
 In summary, unit, integration, and contract tests focus on micro-level testing,
 while API tests, UI functional tests, visual tests, and so on focus on macro-level testing.
+
+
+----------------------------------------Locator selection session----------------------------------------
+
+----------Locator Type:
+ID
+Name
+Class name
+Css selector
+Xpath
+
+
+Good locator are id, nam, class.
+
+Order of Preference:
+1. ID (if Id is unique on the page)
+   2.Input name( if the name is unique on the page)
+   3.class name
+4. css selector
+5. xpath without text or indexing
+6. link text or partial link text
+7. Xpath with text and/ or indexing
+
+
+https://automationpanda.com/2019/01/15/web-element-locators-for-test-automation/
+https://martinfowler.com/bliki/PageObject.html
+
+
+----------Basic Xpath Rules and Examples: both HTML and XML documents.
+Path from root
+
+/html/body
+
+Tag anywhere
+
+//input
+
+Direct Children
+
+//ul/li/a
+
+Descendants
+
+//div/a
+
+Any Element
+
+//*
+
+Any Descendants
+
+//div//*
+
+Attribute Value Equality
+
+//li[@class='zcm__item']
+
+Attribute Condition AND
+
+//img[@width<20][@height<20]
+
+//img[@width<20 and @height<20]
+
+Attribute Condition OR
+
+//input[@name='q' or @id='search_form_input']
+
+Contains Function
+
+//div[contains(@class, 'result')]
+
+//div[contains(@class, 'result__snippet')]
+
+Starts with function
+
+//div[starts-with(@class, 'result')]
+
+Logical not function
+
+//a[not(contains(@class, 'header'))]
+
+
+----------XPath ability
+
+
+selecting elements by text:
+
+//div[contains(@class, 'result__snippet')
+//div[contains(@class, 'result__snippet')][contains(., 'bamboo')]
+//div[contains(@class, 'result__snippet')][not(contains(., 'bamboo'))]
+
+
+
+XPath is selecting elements by index:
+(//div[contains(@class, 'result__snippet')])[3]
+
+
+The third major ability for XPath is finding elements relative to other elements using advanced relationships:
+//a[.//img]
+
+
+
+
+
+
+
 
 
