@@ -91,6 +91,17 @@ Name
 Class name
 Css selector
 Xpath
+link tag
+
+---Best Locator:
+Unique
+Descriptive
+Static
+
+--- Avoid using: 
+link text
+tag name
+xpath
 
 
 Good locator are id, nam, class.
@@ -107,6 +118,43 @@ Order of Preference:
 
 https://automationpanda.com/2019/01/15/web-element-locators-for-test-automation/
 https://martinfowler.com/bliki/PageObject.html
+
+----------CSS selector
+example:
+<input id = "q" class = "q" name = "q"> 
+-> id: By.cssSelector('#q');
+->class: By.cssSelector('.q');
+->class: By.cssSelector("input[name ='q']");(tag name input, name: q)
+
+Tag and class: <input class ="a" type = "text"> ->By.cssSelector("input.q");
+Tag and id: <input id ="a" type = "text"> ->By.cssSelector("input#q");
+Tag and other: <input type = "radio" value = "radio button> -> By.cssSelector("input[type = 'radio']");By.cssSelector("input[value = 'radio button']");
+
+Multiple class:  <input type = "button"  class ="btn btn-lg btn-primary">
+<input type = "button"  class ="btn btn-lg btn-success">
+<input type = "button"  class ="btn btn-lg btn-info">
+-->By.cssSelector(".btn.btn-lg.btn-success")
+
+
+Text matching: 
+Prefix: a[id^ = 'id_prefix_']; example:  <div id = "textField_randomeId">: By.cssSelector("div[id^='textField']);
+Suffix: a[id$ = '_id_suffix'];example:  <div id = "randomeId_textField">: By.cssSelector("div[id$='textField']);
+SubString: a[id* = 'id_pattern'];example:  <div id = "123_textField_randomId">: By.cssSelector("div[id*='textField']);
+exact match: a[id='id']; example: <div id = "textField"> :By.cssSelector("div[id='textField']);
+
+Child node:
+<div id ="parent">
+<a id ="child" href="/child">child</a> </div>> ->cssSelector("div#parent a)
+
+<ul id="list">
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ul>
+-->cssSelector("#list li:nth-child(n)");
+
+
+
 
 
 ----------Basic Xpath Rules and Examples: both HTML and XML documents.
@@ -194,11 +242,7 @@ Cat extends Animal:makeSound("mwow"), eat();
 animal
 animal instance of Dog
 animal instance of Cat
-
-
-Abtraction: provide templates to be implemented.
-
-
+Abstraction: provide templates to be implemented.
 		public interface Product {
 
 		double getPrice();
@@ -211,12 +255,9 @@ Abtraction: provide templates to be implemented.
 		String getColor();
 		void setColor(String color);
 
-
 		}
 
-
-
-public class Book implements Proudct {
+public class Book implements Product {
 
 		}
 
